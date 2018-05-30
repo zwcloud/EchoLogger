@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoLogger.Server", "EchoLogger.Server\EchoLogger.Server.csproj", "{7E3C26A3-D583-4823-A208-1E82FA963BED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoLogger.Client", "EchoLogger.Client\EchoLogger.Client.csproj", "{1445101D-BF5A-4DA9-A704-866E642D3FE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E3C26A3-D583-4823-A208-1E82FA963BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3C26A3-D583-4823-A208-1E82FA963BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3C26A3-D583-4823-A208-1E82FA963BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3C26A3-D583-4823-A208-1E82FA963BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1445101D-BF5A-4DA9-A704-866E642D3FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1445101D-BF5A-4DA9-A704-866E642D3FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1445101D-BF5A-4DA9-A704-866E642D3FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1445101D-BF5A-4DA9-A704-866E642D3FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {234F4097-BB40-485F-9A95-79A8A2C6E657}
+	EndGlobalSection
+EndGlobal
