@@ -10,14 +10,15 @@ TODO
 
 Sometimes, one just want to watch a variable in real time. But under certain circumstance, we can't just use the built-in features from the IDE and the operation system.
 
-My use case is,
+My circumstance is,
 * The console won't work realtimely in a unit test project in VS2017:  
-[`AllocConsole`](https://docs.microsoft.com/en-us/windows/console/allocconsole): not work, (maybe the console is already occupied by the host program of the unit test)  
-`Process.Start("cmd.exe")` and write to it's `StandardInput` stream: tried all the methods from the Internet, but it doesn't work: window not shown.
-# The `Debug.WriteLine` won't work 
+  - [`AllocConsole`](https://docs.microsoft.com/en-us/windows/console/allocconsole): not work, (maybe the console is already occupied by the host program of the unit test)  
+  - `Process.Start("cmd.exe")` and write to it's `StandardInput` stream: tried all the methods from the Internet, but it doesn't work: window not shown.
+
+* The `Debug.WriteLine` won't work 
 The xUnit/VStest framework doesn't show any text written by `Debug.WriteLine`, `Console.WriteLine` and `Trace.WriteLine`. They said we can just use a [`ITestOutputHelper`](https://xunit.github.io/docs/capturing-output.html) to capture the output. But no, we don't want to capture, we want real-time log.
 
-So, all the methods provided by built-in features of IDE and OS failed to met my realtime needs. I decided to write one myself, which is pretty easy.
+So, all the methods provided by built-in features of IDE and OS failed to met my realtime needs. Then I decided to write one myself, which is pretty easy.
 
 # How
 
