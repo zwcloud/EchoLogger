@@ -23,10 +23,10 @@ namespace EchoLogger
          
                 // Buffer for reading data
                 Byte[] bytes = new Byte[256];
-                String data = null;
+                String data;
 
                 // Enter the listening loop.
-                while(true) 
+                while(true)
                 {
                     Console.Write("Waiting for a connection... ");
         
@@ -34,8 +34,6 @@ namespace EchoLogger
                     // You could also user server.AcceptSocket() here.
                     TcpClient client = server.AcceptTcpClient();            
                     Console.WriteLine("Connected!");
-
-                    data = null;
 
                     // Get a stream object for reading and writing
                     NetworkStream stream = client.GetStream();
@@ -47,16 +45,7 @@ namespace EchoLogger
                     {   
                         // Translate data bytes to a ASCII string.
                         data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                        Console.WriteLine("Received: {0}", data);
-       
-                        // Process the data sent by the client.
-                        data = data.ToUpper();
-
-                        byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
-
-                        // Send back a response.
-                        stream.Write(msg, 0, msg.Length);
-                        Console.WriteLine("Sent: {0}", data);            
+                        Console.WriteLine(data);
                     }
          
                     // Shutdown and end connection
