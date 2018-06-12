@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
@@ -34,18 +35,14 @@ namespace EchoLogger
                     // You could also user server.AcceptSocket() here.
                     TcpClient client = server.AcceptTcpClient();            
                     Console.WriteLine("Connected!");
-
-                    // Get a stream object for reading and writing
                     NetworkStream stream = client.GetStream();
-
-                    int i;
-
-                    // Loop to receive all the data sent by the client.
-                    while((i = stream.Read(bytes, 0, bytes.Length))!=0) 
-                    {   
-                        // Translate data bytes to a ASCII string.
-                        data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                        Console.WriteLine(data);
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        while (client.Connected)
+                        {
+                            string line = reader.ReadLine();
+                            Console.WriteLine(line);
+                        }
                     }
          
                     // Shutdown and end connection
