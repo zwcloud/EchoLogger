@@ -24,7 +24,7 @@ namespace EchoLogger
                 while(true)
                 {
                     Console.Write("Waiting for a connection... ");
-                    TcpClient client = server.AcceptTcpClient();            
+                    TcpClient client = server.AcceptTcpClient();
                     Console.WriteLine("Connected!");
                     NetworkStream stream = client.GetStream();
                     using (StreamReader reader = new StreamReader(stream))
@@ -32,10 +32,19 @@ namespace EchoLogger
                         while (client.Connected)
                         {
                             string line = reader.ReadLine();
-                            Console.WriteLine(line);
+                            if (line == "q")
+                            {
+                                break;
+                            }
+                            if (line != null)
+                            {
+                                Console.WriteLine(line);
+                            }
                         }
                     }
+                    stream.Close();
                     client.Close();
+                    Console.WriteLine("Connection closed!");
                 }
             }
             catch(SocketException e)
