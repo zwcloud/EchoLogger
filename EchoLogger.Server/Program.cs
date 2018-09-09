@@ -36,6 +36,13 @@ namespace EchoLogger
                             {
                                 break;
                             }
+
+                            if (line == "cls")
+                            {
+                                Console.Clear();
+                                continue;
+                            }
+
                             if (line != null)
                             {
                                 Console.WriteLine(line);
