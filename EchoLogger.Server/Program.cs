@@ -43,7 +43,7 @@ namespace EchoLogger
                                 continue;
                             }
 
-                            if (line != null)
+                            if (!string.IsNullOrWhiteSpace(line))
                             {
                                 Console.WriteLine(line);
                             }
